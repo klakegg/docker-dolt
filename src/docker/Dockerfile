@@ -1,0 +1,18 @@
+FROM debian:buster-slim AS fetcher
+
+ARG VERSION_ARG
+
+ADD https://github.com/liquidata-inc/dolt/releases/download/v${VERSION_ARG}/dolt-linux-amd64.tar.gz /dolt.tar.gz
+
+RUN mkdir -p /files/usr/lib/dolt /files/usr/bin \
+ && tar -xf /dolt.tar.gz -C /files/usr/lib/dolt --strip 1 \
+ && for e in $(ls /files/usr/lib/dolt/bin); do ln -s /usr/lib/dolt/bin/${e} /files/usr/bin/${e}; done
+
+
+FROM debian:buster-slim AS main
+
+COPY --from=fetcher /files /
+
+WORKDIR /work
+
+ENTRYPOINT ["dolt"]

@@ -1,0 +1,11 @@
+name: Debian
+
+images:
+  debian:
+    target: main
+    edge: true
+    alias:
+      - latest
+      - $(VERSION)
+      - $(VERSION)-debian
+    
