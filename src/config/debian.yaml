@@ -2,10 +2,20 @@ name: Debian
 
 images:
   debian:
-    target: main
+    target: debian
     edge: true
     alias:
       - latest
       - $(VERSION)
       - $(VERSION)-debian
-    
+    tests:
+      - dolt
+      - git-dolt
+
+tests:
+  dolt:
+    command: version
+    expected: dolt version
+
+  git-dolt:
+    entrypoint: git-dolt
