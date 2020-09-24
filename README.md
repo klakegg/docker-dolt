@@ -1,10 +1,12 @@
 # Dolt
 
-Simple packaging of [Dolt](https://github.com/liquidata-inc/dolt) for Docker.
+Minimal Docker images for [Dolt](https://github.com/liquidata-inc/dolt) with batteries included.
 
 
 ## Features
 
+* Includes `dolt`, `git-dolt` and `git-dolt-smudge`.
+* Includes much used tools like `curl`, `make` and `wget`.
 * Allows running as unprivileged user.
 
 
@@ -35,4 +37,4 @@ docker run --rm -it \
 
 ## Environment variables
 
-* `DOLT_ROOT_PATH` - Overriding user home directory in image. Default `/home`
+* `DOLT_ROOT_PATH` - Overriding user home directory in image. Default: `/home`

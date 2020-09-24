@@ -11,6 +11,8 @@ images:
     tests:
       - dolt
       - git-dolt
+      - curl
+      - wget
 
 tests:
   dolt:
@@ -19,3 +21,15 @@ tests:
 
   git-dolt:
     entrypoint: git-dolt
+
+  curl:
+    entrypoint: curl
+    command: --version
+
+  make:
+    entrypoint: make
+    command: --version
+
+  wget:
+    entrypoint: wget
+    command: --version
