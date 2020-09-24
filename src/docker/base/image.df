@@ -1,0 +1,1 @@
+FROM debian:10.4-slim AS debian

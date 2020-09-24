@@ -1,4 +1,4 @@
-FROM debian:buster-slim AS fetcher
+FROM base--image--debian AS fetcher
 
 ARG VERSION_ARG
 
